@@ -4,7 +4,10 @@ matrix:
   include:
   - name: "astroconda latest (py3.6)"
     python: "3.6"
-    env: astroconda=true
+    env: astroconda=true SCRIPT_PY="convert.py"
+  - name: "check_nbs (py3.6)"
+    python: "3.6"
+    env: astroconda=false SCRIPT_PY="check_nbs.py"
 
 install:
   - sudo apt-get update
@@ -30,4 +33,4 @@ install:
     fi
   - #pip install git+https://github.com/eteq/nbpages # doesn't work yet
 
-script: python convert.py
+script: python $SCRIPT_PY
