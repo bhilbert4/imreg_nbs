@@ -31,7 +31,6 @@ install:
       conda config --add channels http://ssb.stsci.edu/astroconda-dev;
       conda install stsci jwst;
     fi
-  - pip install git+https://github.com/spacetelescope/tweakwcs
   - #pip install git+https://github.com/eteq/nbpages # doesn't work yet
 
 script: python $SCRIPT_PY

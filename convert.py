@@ -8,6 +8,10 @@ from nbpages import make_parser, run_parsed, make_html_index
 args = make_parser().parse_args()
 if args.template_file is None and os.path.exists('nb_html.tpl'):
     args.template_file = 'nb_html.tpl'
+
+if args.exclude is None:
+    args.exclude = 'tweakwcs/tweakwcs_example.ipynb'
+
 converted = run_parsed('.', output_type='HTML', args=args)
 
 logging.getLogger('nbpages').info('Generating index.html')
